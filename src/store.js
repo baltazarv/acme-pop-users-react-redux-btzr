@@ -37,9 +37,17 @@ const loadUsers = () => {
         users
       })
     )
-    .then(() => console.log(store.getState()))
+    // .then(() => console.log(store.getState()))
   }
 }
+
+// const addPoint = () => {
+//   console.log('add one');
+// }
+
+// const subtractPoint = () => {
+//   console.log('minus one');
+// }
 
 const updateUser = (user, history) => {
   return (dispatch) => {

@@ -50,8 +50,8 @@ class User extends Component {
             name: <input value={ name } onChange={ onChangeName } /><br />
             rating: <input value={ rating } onChange={ onChangeRating }/><br />
             <button>Update</button>
-            </p>
-          </form>
+          </p>
+        </form>
         <form onSubmit={ onDelete }><button>Delete</button></form>
       </div>
     )

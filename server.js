@@ -43,4 +43,4 @@ app.delete('/api/users/:id', (req, res, next) => {
   .catch(next);
 })
 
-app.listen(port, () => console.log(`Open http://locahost:${port}`));
+app.listen(port, () => console.log(`Open http://localhost:${port}`));
