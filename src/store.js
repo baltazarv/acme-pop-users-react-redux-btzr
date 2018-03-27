@@ -36,18 +36,10 @@ const loadUsers = () => {
         type: SET_USERS,
         users
       })
-    )
+    );
     // .then(() => console.log(store.getState()))
-  }
-}
-
-// const addPoint = () => {
-//   console.log('add one');
-// }
-
-// const subtractPoint = () => {
-//   console.log('minus one');
-// }
+  };
+};
 
 const updateUser = (user, history) => {
   return (dispatch) => {
@@ -60,7 +52,7 @@ const updateUser = (user, history) => {
       })
     )
     .then( () => {
-      history.push('/users');
+      if (history) history.push('/users');
     });
   }
 }

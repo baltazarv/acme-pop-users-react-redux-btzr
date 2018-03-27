@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 class App extends Component {
   componentDidMount() {
     this.props.loadUsers();
-    // store.dispatch(loadUsers());
   }
   render() {
     return (
@@ -34,7 +33,7 @@ class App extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     loadUsers: () => dispatch(loadUsers())
-  }
-}
+  };
+};
 
 export default connect(null, mapDispatchToProps)(App);

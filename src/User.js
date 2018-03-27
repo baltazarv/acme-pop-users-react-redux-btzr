@@ -8,7 +8,7 @@ class User extends Component {
     this.state = {
       name: this.props.user ? this.props.user.name : '',
       rating: this.props.user ? this.props.user.rating: ''
-    }
+    };
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeRating = this.onChangeRating.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
@@ -18,7 +18,7 @@ class User extends Component {
     this.setState({
       name: nextProps.user ? nextProps.user.name : '',
       rating: nextProps.user ? nextProps.user.rating : '',
-    })
+    });
   }
   onChangeName(ev) {
     this.setState({ name: ev.target.value });
@@ -28,7 +28,8 @@ class User extends Component {
   }
   onUpdate(ev) {
     ev.preventDefault();
-    const user = { id: this.props.id, name: this.state.name, rating: this.state.rating*1 };
+    // if (!this.state.nam) this.setState({ name: 'user' });
+    const user = { id: this.props.id, name: this.state.name, rating: this.state.rating * 1 };
     this.props.updateUser(user);
   }
   onDelete(ev) {
@@ -48,7 +49,7 @@ class User extends Component {
         <form onSubmit={ onUpdate }>
           <p>
             name: <input value={ name } onChange={ onChangeName } /><br />
-            rating: <input value={ rating } onChange={ onChangeRating }/><br />
+            rating: <input value={ rating } onChange={ onChangeRating } /><br />
             <button>Update</button>
           </p>
         </form>
@@ -59,7 +60,7 @@ class User extends Component {
 }
 
 const mapStateToProps = (users, { id }) => {
-  const user = users.find( user => user.id === id);
+  const user = users.find( _user => _user.id === id);
   return {
     user
   };

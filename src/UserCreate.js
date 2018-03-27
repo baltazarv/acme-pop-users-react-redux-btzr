@@ -7,13 +7,13 @@ class UserCreate extends Component {
     super(props);
     this.state = {
       name: ''
-    }
+    };
     this.onChangeName = this.onChangeName.bind(this);
     this.onSave = this.onSave.bind(this);
   }
   onSave(ev) {
     ev.preventDefault();
-    const user = { name: this.state.name };
+    const user = { name: this.state.name, rating: 0 };
     this.props.saveUser(user);
   }
   onChangeName(ev) {
@@ -37,7 +37,7 @@ class UserCreate extends Component {
 const mapDispatchToProps = (dispatch, { history }) => {
   return {
     saveUser: (user) => dispatch(createUser(user, history))
-  }
-}
+  };
+};
 
 export default connect(null, mapDispatchToProps)(UserCreate);
